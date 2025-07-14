@@ -8,7 +8,7 @@ import cors from "cors";
 
 app.use(cors({ origin: "*", credentials: false }));
 
-app.use(cors(corsOptions));
+
 dotenv.config();
 
 import mongoose from "mongoose";
