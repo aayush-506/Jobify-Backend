@@ -1,6 +1,7 @@
 import "express-async-errors";
 import express from "express";
 const app = express();
+app.set("trust proxy", 1);
 import morgan from "morgan";
 import * as dotenv from "dotenv";
 
