@@ -5,10 +5,9 @@ import morgan from "morgan";
 import * as dotenv from "dotenv";
 
 import cors from "cors";
-const corsOptions = {
-  origin: "*",
-  credentials: true,
-};
+
+app.use(cors({ origin: "*", credentials: false }));
+
 app.use(cors(corsOptions));
 dotenv.config();
 
