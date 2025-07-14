@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.resolve(__dirname, "../frontend/dist")));
+
 
 app.use(cookieParser());
 app.use(express.json());
@@ -52,9 +52,7 @@ app.use("/api/jobs", authenticateUser, jobRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", authenticateUser, userRouter);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
-});
+
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
