@@ -6,7 +6,11 @@ import * as dotenv from "dotenv";
 
 import cors from "cors";
 
-app.use(cors({ origin: "*", credentials: false }));
+app.use(cors({
+  origin: true, 
+  credentials: true 
+}));
+
 
 
 dotenv.config();
